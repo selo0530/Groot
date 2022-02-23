@@ -1,4 +1,0 @@
-[submodule "depend/BehaviorTree.CPP"]
-	path = depend/BehaviorTree.CPP
-	url = https://github.com/selo0530/BehaviorTree.CPP/
-	branch = master
