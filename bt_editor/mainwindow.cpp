@@ -377,12 +377,12 @@ void MainWindow::loadFromXML(const QString& xml_text)
         else{
             currentTabInfo()->nodeReorder();
         }
-        auto models_to_remove = GetModelsToRemove(this, _treenode_models, custom_models);
-
-        for( QString model_name: models_to_remove )
-        {
-            onModelRemoveRequested(model_name);
-        }
+        //auto models_to_remove = GetModelsToRemove(this, _treenode_models, custom_models);
+        //
+        //for( QString model_name: models_to_remove )
+        //{
+        //    onModelRemoveRequested(model_name);
+        //}
     }
     catch (std::exception& err) {
         error = true;
