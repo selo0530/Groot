@@ -79,13 +79,13 @@ main(int argc, char *argv[])
             }
         }
         else{
-            StartupDialog dialog;
-            dialog.setWindowFlags( Qt::FramelessWindowHint );
-            if(dialog.exec() != QDialog::Accepted)
-            {
-                return 0;
-            }
-            mode = dialog.getGraphicMode();
+            //StartupDialog dialog;
+            //dialog.setWindowFlags( Qt::FramelessWindowHint );
+            //if(dialog.exec() != QDialog::Accepted)
+            //{
+            //    return 0;
+            //}
+            mode = GraphicMode::EDITOR;
         }
 
         MainWindow win( mode );
