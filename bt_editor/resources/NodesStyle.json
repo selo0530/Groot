@@ -77,6 +77,11 @@
         "icon": ":/icons/svg/fallback.svg",
         "caption_color":  "#77ccff"
     },
+	
+	"Selector": {
+        "icon": ":/icons/svg/fallback.svg",
+        "caption_color":  "#77ccff"
+    },
 
     "ReactiveFallback": {
         "icon": ":/icons/svg/fallback_reactive.svg",
