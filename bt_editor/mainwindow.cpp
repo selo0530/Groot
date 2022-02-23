@@ -434,6 +434,9 @@ void MainWindow::on_actionLoad_triggered()
     }
 
     loadFromXML(xml_text);
+
+    QCoreApplication::setApplicationName("Groot - " + file.fileName());
+    setWindowTitle(QCoreApplication::applicationName());
 }
 
 QString MainWindow::saveToXML() const
@@ -652,6 +655,9 @@ void MainWindow::on_actionSave_triggered()
 
     directory_path = QFileInfo(fileName).absolutePath();
     settings.setValue("MainWindow.lastSaveDirectory", directory_path);
+
+	QCoreApplication::setApplicationName("Groot - " + file.fileName());
+	setWindowTitle(QCoreApplication::applicationName());
 }
 
 void MainWindow::onAutoArrange()
