@@ -17,3 +17,8 @@ cp build/bin* installer/io/plotjuggler.app/data/
 WIN:
 
 c:\Qt\Tools\QtInstallerFramework\3.0\bin\binarycreator.exe --offline-only -c installer/config.xml -p installer  PlotJugglerInstaller.exe
+
+# QT Compile
+
+WIN:
+
