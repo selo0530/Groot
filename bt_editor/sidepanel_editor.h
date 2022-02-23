@@ -25,6 +25,8 @@ public:
 
     void clear();
 
+    void loadPalette(QString fileName);
+
 public slots:
     void onRemoveModel(QString selected_name);
 

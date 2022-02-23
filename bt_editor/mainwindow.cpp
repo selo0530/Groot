@@ -203,6 +203,8 @@ MainWindow::MainWindow(GraphicMode initial_mode, QWidget *parent) :
     onTabSetMainTree(0);
     onSceneChanged();
     _current_state = saveCurrentState();
+
+    _editor_widget->loadPalette(QDir().absoluteFilePath("palette.xml"));
 }
 
 

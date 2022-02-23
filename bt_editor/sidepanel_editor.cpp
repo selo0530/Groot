@@ -100,6 +100,50 @@ void SidepanelEditor::clear()
 
 }
 
+void SidepanelEditor::loadPalette(QString fileName)
+{
+	QFileInfo fileInfo(fileName);
+
+	if (!fileInfo.exists(fileName)) {
+		return;
+	}
+
+	QFile file(fileName);
+
+	if (!file.open(QIODevice::ReadOnly)) {
+		return;
+	}
+
+	//--------------------------------
+	NodeModels imported_models;
+	if (fileInfo.suffix() == "xml")
+	{
+		QFile file(fileName);
+		imported_models = importFromXML(&file);
+	}
+	else if (fileInfo.completeSuffix() == "skills.json")
+	{
+		imported_models = importFromSkills(fileName);
+	}
+
+	if (imported_models.empty())
+	{
+		return;
+	}
+
+	auto models_to_remove = GetModelsToRemove(this, _tree_nodes_model, imported_models);
+
+	for (QString model_name : models_to_remove)
+	{
+		emit modelRemoveRequested(model_name);
+	}
+
+	for (auto& it : imported_models)
+	{
+		emit addNewModel(it.second);
+	}
+}
+
 void SidepanelEditor::on_paletteTreeWidget_itemSelectionChanged()
 {
   auto selected_items = ui->paletteTreeWidget->selectedItems();
@@ -310,50 +354,11 @@ void SidepanelEditor::on_buttonDownload_clicked()
     QString fileName = QFileDialog::getOpenFileName(this, tr("Load TreenNodeModel from file"),
                                                     directory_path,
                                                     tr("BehaviorTree (*.xml *.skills.json)" ));
-    QFileInfo fileInfo(fileName);
+    loadPalette(fileName);
 
-    if (!fileInfo.exists(fileName)){
-        return;
-    }
-
-    QFile file(fileName);
-
-    if (!file.open(QIODevice::ReadOnly)){
-        return;
-    }
-
-    directory_path = QFileInfo(fileName).absolutePath();
-    settings.setValue("SidepanelEditor.lastLoadDirectory", directory_path);
-    settings.sync();
-
-    //--------------------------------
-    NodeModels imported_models;
-    if( fileInfo.suffix() == "xml" )
-    {
-        QFile file(fileName);
-        imported_models = importFromXML( &file );
-    }
-    else if( fileInfo.completeSuffix() == "skills.json" )
-    {
-        imported_models = importFromSkills( fileName );
-    }
-
-    if( imported_models.empty() )
-    {
-        return;
-    }
-
-    auto models_to_remove = GetModelsToRemove(this, _tree_nodes_model, imported_models );
-
-    for(QString model_name: models_to_remove)
-    {
-        emit modelRemoveRequested(model_name);
-    }
-
-    for(auto& it: imported_models)
-    {
-        emit addNewModel( it.second );
-    }
+	directory_path = QFileInfo(fileName).absolutePath();
+	settings.setValue("SidepanelEditor.lastLoadDirectory", directory_path);
+	settings.sync();
 }
 
 NodeModels SidepanelEditor::importFromXML(QFile* file)
