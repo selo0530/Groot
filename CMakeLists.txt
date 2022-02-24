@@ -140,7 +140,7 @@ endif()
 
 QT5_WRAP_UI(FORMS_HEADERS ${FORMS_UI})
 
-add_library(behavior_tree_editor SHARED
+add_library(behavior_tree_editor STATIC
     ${APP_CPPS}
     ${FORMS_HEADERS}
 )
@@ -164,8 +164,6 @@ target_link_libraries(behavior_tree_editor ${GROOT_DEPENDENCIES} )
 
 add_executable(Groot ./bt_editor/main.cpp  ${RESOURCE_FILES})
 target_link_libraries(Groot behavior_tree_editor )
-
-add_subdirectory(test)
 
 ######################################################
 # INSTALL
