@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Groot", "build\Groot.vcxproj", "{D094A36E-6DBD-35C7-8412-F62BE69A7407}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A8CFB135-436F-33AB-AA6C-8EC7BAAC13D4} = {A8CFB135-436F-33AB-AA6C-8EC7BAAC13D4}
+		{357DE753-AEE0-3092-AE41-AA6E133B35D6} = {357DE753-AEE0-3092-AE41-AA6E133B35D6}
+		{2F30E44D-11F5-3464-B822-325AB5335872} = {2F30E44D-11F5-3464-B822-325AB5335872}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtNodeEditor", "build\QtNodeEditor\QtNodeEditor.vcxproj", "{A8CFB135-436F-33AB-AA6C-8EC7BAAC13D4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "behavior_tree_editor", "build\behavior_tree_editor.vcxproj", "{357DE753-AEE0-3092-AE41-AA6E133B35D6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A8CFB135-436F-33AB-AA6C-8EC7BAAC13D4} = {A8CFB135-436F-33AB-AA6C-8EC7BAAC13D4}
+		{2F30E44D-11F5-3464-B822-325AB5335872} = {2F30E44D-11F5-3464-B822-325AB5335872}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "behaviortree_cpp_v3", "build\depend\BehaviorTree.CPP\behaviortree_cpp_v3.vcxproj", "{2F30E44D-11F5-3464-B822-325AB5335872}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D094A36E-6DBD-35C7-8412-F62BE69A7407}.Debug|x64.ActiveCfg = Debug|x64
+		{D094A36E-6DBD-35C7-8412-F62BE69A7407}.Debug|x64.Build.0 = Debug|x64
+		{D094A36E-6DBD-35C7-8412-F62BE69A7407}.Release|x64.ActiveCfg = Release|x64
+		{D094A36E-6DBD-35C7-8412-F62BE69A7407}.Release|x64.Build.0 = Release|x64
+		{A8CFB135-436F-33AB-AA6C-8EC7BAAC13D4}.Debug|x64.ActiveCfg = Debug|x64
+		{A8CFB135-436F-33AB-AA6C-8EC7BAAC13D4}.Debug|x64.Build.0 = Debug|x64
+		{A8CFB135-436F-33AB-AA6C-8EC7BAAC13D4}.Release|x64.ActiveCfg = Release|x64
+		{A8CFB135-436F-33AB-AA6C-8EC7BAAC13D4}.Release|x64.Build.0 = Release|x64
+		{357DE753-AEE0-3092-AE41-AA6E133B35D6}.Debug|x64.ActiveCfg = Debug|x64
+		{357DE753-AEE0-3092-AE41-AA6E133B35D6}.Debug|x64.Build.0 = Debug|x64
+		{357DE753-AEE0-3092-AE41-AA6E133B35D6}.Release|x64.ActiveCfg = Release|x64
+		{357DE753-AEE0-3092-AE41-AA6E133B35D6}.Release|x64.Build.0 = Release|x64
+		{2F30E44D-11F5-3464-B822-325AB5335872}.Debug|x64.ActiveCfg = Debug|x64
+		{2F30E44D-11F5-3464-B822-325AB5335872}.Debug|x64.Build.0 = Debug|x64
+		{2F30E44D-11F5-3464-B822-325AB5335872}.Release|x64.ActiveCfg = Release|x64
+		{2F30E44D-11F5-3464-B822-325AB5335872}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33531E07-787E-3E08-AF92-F1C1B5E05E35}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,20 @@
+1. QT 소스 빌드
+
+2. 환경 변수에 QTBASE_DIR 등록 (\ 아니고 / 사용)
+ex) E:/github/qt-everywhere-src-5.15.2/qtbase
+
+3. setup.bat 실행
+
+4. groot.sln 실행
+
+5. Groot 프로젝트 우클릭 -> 속성
+
+6. 콘솔 끄기
+	6.1. 하위 시스템 창으로 변경
+	- 구성 속성 - 링커 - 시스템 - 하위 시스템 - 창(/SUBSYSTEM:WINDOWS)
+
+	6.2. 진입점 변경
+	- 구성 속성 - 링커 - 고급 - 진입점 - mainCRTStartup
+
+7. 빌드
+- Release | x64 빌드
